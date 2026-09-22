@@ -1,0 +1,6 @@
+{
+  "name": "Novo Starflix",
+  "description": "Funil interativo Starflix para anúncios patrocinados e vendas na internet",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
