@@ -32,24 +32,38 @@ export const StepQuestion: React.FC<StepQuestionProps> = ({
       transition={{ duration: 0.25 }}
       className="w-full flex flex-col items-center"
     >
-      {/* Visual illustration badge */}
-      <div className="mb-5 flex flex-col items-center">
-        <div className="relative">
-          <div className="w-18 h-18 rounded-lg bg-red-50 border-2 border-gray-900 flex items-center justify-center text-red-600 shadow-[3px_3px_0px_#09090b]">
-            {iconType === 'confusion' ? (
-              <span className="text-3xl" role="img" aria-label="pensando">
-                🤔
-              </span>
-            ) : (
-              <span className="text-3xl" role="img" aria-label="alvo">
-                🎯
-              </span>
-            )}
+      {/* Visual illustration badge / GIF */}
+      <div className="mb-4 flex flex-col items-center w-full">
+        {data.gifUrl ? (
+          <div className="w-full max-w-[280px] sm:max-w-[320px] aspect-video rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] bg-gray-950 flex items-center justify-center relative">
+            <img
+              src={data.gifUrl}
+              alt={data.question}
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+            <div className="absolute bottom-1.5 right-1.5 bg-gray-950/80 backdrop-blur-sm text-[9px] font-mono font-bold text-white px-1.5 py-0.5 rounded-sm border border-gray-800">
+              GIF
+            </div>
           </div>
-          <div className="absolute -bottom-2 -right-2 bg-gray-900 text-white p-1 rounded-sm border border-gray-800">
-            <HelpCircle className="w-3.5 h-3.5 text-amber-400" />
+        ) : (
+          <div className="relative">
+            <div className="w-18 h-18 rounded-lg bg-red-50 border-2 border-gray-900 flex items-center justify-center text-red-600 shadow-[3px_3px_0px_#09090b]">
+              {iconType === 'confusion' ? (
+                <span className="text-3xl" role="img" aria-label="pensando">
+                  🤔
+                </span>
+              ) : (
+                <span className="text-3xl" role="img" aria-label="alvo">
+                  🎯
+                </span>
+              )}
+            </div>
+            <div className="absolute -bottom-2 -right-2 bg-gray-900 text-white p-1 rounded-sm border border-gray-800">
+              <HelpCircle className="w-3.5 h-3.5 text-amber-400" />
+            </div>
           </div>
-        </div>
+        )}
 
         <span className="mt-3 inline-block text-[11px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-100 px-2.5 py-0.5 rounded-sm border border-red-300">
           {data.badge}

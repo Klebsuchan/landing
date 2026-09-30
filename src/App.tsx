@@ -15,7 +15,20 @@ import { UserResponses } from './types';
 const TOTAL_STEPS = 7;
 
 export default function App() {
-  const [currentStep, setCurrentStep] = useState(0);
+  // Support URL param for direct testing of any step (e.g. ?step=4 or ?step=video)
+  const [currentStep, setCurrentStep] = useState<number>(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const stepParam = urlParams.get('step');
+      if (stepParam === 'video' || stepParam === 'depoimento') return 4;
+      if (stepParam === 'checkout') return 6;
+      if (stepParam) {
+        const parsed = parseInt(stepParam, 10);
+        if (!isNaN(parsed) && parsed >= 0 && parsed < TOTAL_STEPS) return parsed;
+      }
+    }
+    return 0;
+  });
   const [userResponses, setUserResponses] = useState<UserResponses>({});
   const [utmParams, setUtmParams] = useState<Record<string, string>>({});
 

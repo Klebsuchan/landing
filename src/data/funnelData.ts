@@ -1,11 +1,65 @@
-export const CHECKOUT_BASE_URL = 'https://pay.kiwify.com.br/Ea8P4PB';
+export const CHECKOUT_BASE_URL = 'https://chk.eduzz.com/E05NNXX49X';
 export const WHATSAPP_BASE_URL = 'https://wa.me/5585958548964?text=Oi%20meu%20s%C3%B3cio%20acabei%20de%20sair%20do%20teu%20quiz%20e%20tenho%20uma%20d%C3%BAvida.';
+
+// Visual assets e imagens do primeiro link (Kiwify Starflix)
+export const CHECKOUT_VISUALS = {
+  headerBanner:
+    'https://aws-assets.kiwify.com.br/cdn-cgi/image/fit=scale-down,width=1000/GLoyTdzx7HaqTzY/img_builder_aa681415-2e51-408a-9c3e-2a1ccb4630a5_fbc8e9c90535417f8cf541f28d6f61f5.png',
+  productBanner:
+    'https://aws-assets.kiwify.com.br/cdn-cgi/image/fit=scale-down,width=800/GLoyTdzx7HaqTzY/img_builder_fb379a2a-cd52-4018-b133-2d3afbeb31d7_1350d8f4998646ff864395d4ab5a6068.png',
+  sideDevice:
+    'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_aa73f0b7-ebdf-4f2c-9e27-26a49d987fd0_10e4c143d9094e3ea27640f78824aa0f.png',
+  cardAnuncios:
+    'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_6c44c1f1-34c0-4ef6-8c4f-28241755ecaf_2aa5da55bd4f456384f5dee3821b8b70.png',
+  solutionGif:
+    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXNja2k5ZTBpMXJ5OTJ2NXFzMzA1bW44MWYycjJjZjBvZGdrMzN6MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.gif',
+  solutionGifAlternative:
+    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzB2M3BxcDhpNXU4Y3kya3g4N3hndG05d21xY2xxcWlydmNxODVqZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6gDWzmAzrpi5DQU8/giphy.gif',
+  deliverables: [
+    {
+      title: 'Aulas Práticas do Zero ao Avançado',
+      url: 'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_1dde07c8-b401-44b3-9e71-08ec68fe35ab_5f70f7b5bdd74978a39ac24536d5f50e.png',
+      desc: 'Passo a passo na tela do celular e do computador',
+    },
+    {
+      title: 'Estruturas Validadas de Campanhas',
+      url: 'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_b452c1df-b3f1-42e0-b98f-283b090b5cb1_559862d5397e4ec589e19ac47ce19d1a.png',
+      desc: 'Anúncios prontos só para copiar e colar no seu negócio',
+    },
+    {
+      title: 'Como Lotar o WhatsApp de Clientes',
+      url: 'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_24809cf8-5098-48f4-9d60-9e254cac1a60_36f4ae4e6b00439180eb4ee82848e4ac.png',
+      desc: 'Fluxo constante de novos contatos todos os dias',
+    },
+  ],
+  advantages: [
+    {
+      title: 'Privacidade',
+      subtitle: 'Sua informação 100% segura',
+      icon: 'globe',
+    },
+    {
+      title: 'Compra segura',
+      subtitle: 'Ambiente seguro e autenticado',
+      icon: 'shield',
+    },
+    {
+      title: 'Entregue via E-mail',
+      subtitle: 'Acesso ao produto entregue por email',
+      icon: 'mail',
+    },
+  ],
+};
+
+// URL padrão para o vídeo de depoimento real do aluno (arquivo enviado pelo usuário)
+export const DEFAULT_TESTIMONIAL_VIDEO_URL = '/curso-trafego-2026-landpage.mp4';
 
 export interface QuestionData {
   id: string;
   badge: string;
   question: string;
   subtitle?: string;
+  gifUrl?: string;
   options: {
     id: string;
     letter: string;
@@ -19,6 +73,8 @@ export const QUESTION_1: QuestionData = {
   badge: 'PERGUNTA 1 DE 2',
   question: 'Na hora de fazer seus anúncios patrocinados, o que mais te desanima?',
   subtitle: 'Selecione a opção que mais reflete a sua realidade hoje:',
+  gifUrl:
+    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRqcXdtanE3ZWhqNDQycGlzODF6aGgxa2FvOTd2aW9pZ2tqcWVlZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26n6WywJyh39n1pBu/giphy.gif',
   options: [
     {
       id: 'oCJQlP',
@@ -40,6 +96,8 @@ export const QUESTION_2: QuestionData = {
   badge: 'PERGUNTA 2 DE 2',
   question: 'Porque você sente que precisa fazer anúncios?',
   subtitle: 'Qual é a principal virada de chave que seu negócio precisa?',
+  gifUrl:
+    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXNja2k5ZTBpMXJ5OTJ2NXFzMzA1bW44MWYycjJjZjBvZGdrMzN6MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.gif',
   options: [
     {
       id: '2eMAsw',
@@ -108,7 +166,7 @@ export const NICHES_DATA = [
     id: 'nicho-2',
     name: 'Motopeças & Oficinas Automotivas',
     result: 'De R$ 10k para mais de R$ 100k/mês',
-    highlight: 'Exemplo do aluno Rair (Casa dos Capacetes), vendendo para toda a cidade.',
+    highlight: 'Exemplo real do aluno no depoimento em vídeo, vendendo para toda a cidade.',
     tag: 'Automotivo',
   },
   {

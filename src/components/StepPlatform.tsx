@@ -1,7 +1,19 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { CheckCircle2, Play, Sparkles, ArrowRight } from 'lucide-react';
-import { STARFLIX_MODULES } from '../data/funnelData';
+import {
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  Flame,
+  Globe,
+  Lock,
+  Mail,
+  Zap,
+} from 'lucide-react';
+import {
+  STARFLIX_MODULES,
+  CHECKOUT_VISUALS,
+} from '../data/funnelData';
 
 interface StepPlatformProps {
   onNext: () => void;
@@ -14,89 +26,83 @@ export const StepPlatform: React.FC<StepPlatformProps> = ({ onNext }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
       transition={{ duration: 0.25 }}
-      className="w-full flex flex-col items-center"
+      className="w-full flex flex-col items-center pb-8"
     >
-      {/* Title */}
-      <div className="text-center mb-5">
+      {/* Title Header */}
+      <div className="text-center mb-4">
         <span className="inline-block text-[11px] font-mono font-bold uppercase tracking-wider text-red-800 bg-red-100 px-2.5 py-0.5 rounded-sm border border-red-300 mb-2">
           Apresentação Oficial
         </span>
         <h2 className="text-2xl md:text-3xl font-black text-gray-950 leading-tight">
-          Na <span className="text-red-600">STARFLIX</span> eu vou te mostrar:
+          Na <span className="text-red-600">STARFLIX</span> você vai ter:
         </h2>
+        <p className="text-xs text-gray-600 mt-1 max-w-sm mx-auto">
+          Aprenda tráfego pago de forma simples e prática para aumentar suas vendas todos os dias! 🔥
+        </p>
       </div>
 
-      {/* Starflix Styled Platform Mockup */}
-      <div className="w-full max-w-md bg-gray-950 text-white rounded-md p-4 shadow-[4px_4px_0px_#09090b] border-2 border-gray-900 mb-6">
-        <div className="flex items-center justify-between border-b border-gray-800 pb-2.5 mb-3">
-          <div className="flex items-center gap-1.5">
-            <span className="font-black text-lg tracking-wider text-white">
-              STAR<span className="text-red-500">FLIX</span>
-            </span>
-            <span className="text-[9px] uppercase tracking-widest bg-red-600 font-bold px-1.5 py-0.5 rounded-sm text-white">
-              HUB
-            </span>
-          </div>
-          <div className="flex items-center gap-1 text-[11px] text-gray-300 font-mono">
-            <span className="w-2 h-2 rounded-none bg-emerald-500 animate-pulse" />
-            <span>Acesso Imediato</span>
-          </div>
+      {/* Main Official Banner from Other Link */}
+      <div className="w-full max-w-md rounded-md overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-4 bg-black">
+        <img
+          src={CHECKOUT_VISUALS.productBanner}
+          alt="Starflix Treinamento Completo"
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+      {/* Visual Modules Gallery directly copied from the original checkout */}
+      <div className="w-full max-w-md mb-5">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-xs font-black uppercase tracking-wider text-gray-950 font-mono flex items-center gap-1.5">
+            <Flame className="w-4 h-4 fill-red-600 text-red-600" />
+            <span>Módulos Práticos Inclusos</span>
+          </span>
+          <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-sm border border-emerald-300">
+            Acesso Imediato
+          </span>
         </div>
 
-        {/* Streaming Modules Showcase Mockup */}
-        <div className="grid grid-cols-2 gap-2 mb-3">
-          <div className="bg-gray-900 rounded-sm p-2.5 border border-gray-800 flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono font-bold text-red-400 uppercase">Módulo 01</span>
-              <Play className="w-3.5 h-3.5 text-white fill-white" />
+        {/* 3 Main Deliverable Cards with exact images from Kiwify */}
+        <div className="grid grid-cols-3 gap-2 mb-3">
+          {CHECKOUT_VISUALS.deliverables.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col bg-white rounded-md overflow-hidden border-2 border-gray-900 shadow-[2px_2px_0px_#09090b] group"
+            >
+              <div className="aspect-[4/5] overflow-hidden bg-gray-950">
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                />
+              </div>
+              <div className="p-1.5 bg-gray-50 border-t border-gray-200 text-center flex-1 flex items-center justify-center">
+                <p className="text-[10px] font-black text-gray-900 leading-tight">
+                  {item.title}
+                </p>
+              </div>
             </div>
-            <p className="text-xs font-bold text-gray-100 leading-snug">
-              Anúncios Direto no Celular
-            </p>
-            <span className="text-[10px] text-gray-400 mt-1">Passo a passo na tela</span>
-          </div>
-
-          <div className="bg-gray-900 rounded-sm p-2.5 border border-gray-800 flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono font-bold text-red-400 uppercase">Módulo 02</span>
-              <Play className="w-3.5 h-3.5 text-white fill-white" />
-            </div>
-            <p className="text-xs font-bold text-gray-100 leading-snug">
-              Gerenciador Sem Medo
-            </p>
-            <span className="text-[10px] text-gray-400 mt-1">Configuração profissional</span>
-          </div>
-
-          <div className="bg-gray-900 rounded-sm p-2.5 border border-gray-800 flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono font-bold text-red-400 uppercase">Módulo 03</span>
-              <Play className="w-3.5 h-3.5 text-white fill-white" />
-            </div>
-            <p className="text-xs font-bold text-gray-100 leading-snug">
-              Lotar o WhatsApp
-            </p>
-            <span className="text-[10px] text-gray-400 mt-1">Clientes prontos pra comprar</span>
-          </div>
-
-          <div className="bg-gray-900 rounded-sm p-2.5 border border-gray-800 flex flex-col justify-between">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] font-mono font-bold text-red-400 uppercase">Módulo 04</span>
-              <Play className="w-3.5 h-3.5 text-white fill-white" />
-            </div>
-            <p className="text-xs font-bold text-gray-100 leading-snug">
-              Roteiros & Criativos
-            </p>
-            <span className="text-[10px] text-gray-400 mt-1">Modelos que convertem</span>
-          </div>
+          ))}
         </div>
 
-        <div className="bg-red-950/60 border border-red-800/60 rounded-sm p-2 text-center text-xs text-red-200 font-medium">
-          🎬 Mais de 30 aulas direto ao ponto + atualizações o ano todo
+        {/* Device Showcase Artwork from First Link */}
+        <div className="rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] bg-white p-2">
+          <div className="flex items-center gap-2 mb-1.5 text-xs font-black text-gray-900">
+            <Zap className="w-3.5 h-3.5 text-amber-500 fill-amber-400" />
+            <span>Assista no Celular, Tablet ou Computador</span>
+          </div>
+          <div className="rounded-sm overflow-hidden border border-gray-200">
+            <img
+              src={CHECKOUT_VISUALS.sideDevice}
+              alt="Plataforma no computador e celular"
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Alert / Highlight Box with Checklist */}
-      <div className="w-full max-w-md bg-red-50/80 border-2 border-red-300 rounded-md p-4 mb-6 text-gray-900 shadow-[3px_3px_0px_#fca5a5]">
+      {/* Checklist of Everything included inside Starflix */}
+      <div className="w-full max-w-md bg-red-50/90 border-2 border-red-300 rounded-md p-4 mb-5 text-gray-900 shadow-[3px_3px_0px_#fca5a5]">
         <div className="flex items-center gap-2 mb-3 text-red-900 font-black text-sm">
           <Sparkles className="w-4 h-4 text-red-600" />
           <span>O que você vai dominar dentro do treinamento:</span>
@@ -104,7 +110,10 @@ export const StepPlatform: React.FC<StepPlatformProps> = ({ onNext }) => {
 
         <div className="flex flex-col gap-2">
           {STARFLIX_MODULES.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-2 bg-white/70 p-2 rounded-sm border border-red-200">
+            <div
+              key={idx}
+              className="flex items-start gap-2 bg-white/80 p-2 rounded-sm border border-red-200"
+            >
               <CheckCircle2 className="w-4 h-4 text-emerald-600 fill-emerald-100 shrink-0 mt-0.5" />
               <span className="text-xs md:text-sm font-semibold text-gray-900 leading-snug">
                 {item}
@@ -121,6 +130,25 @@ export const StepPlatform: React.FC<StepPlatformProps> = ({ onNext }) => {
             </strong>{' '}
             do seu negócio usando a Internet.
           </p>
+        </div>
+      </div>
+
+      {/* Official Advantages from Kiwify */}
+      <div className="w-full max-w-md grid grid-cols-3 gap-2 mb-6">
+        <div className="flex flex-col items-center text-center p-2.5 bg-white rounded-md border-2 border-gray-900 shadow-[2px_2px_0px_#09090b]">
+          <Globe className="w-4 h-4 text-amber-600 mb-1" />
+          <span className="text-[11px] font-black text-gray-900 leading-tight">Privacidade</span>
+          <span className="text-[9px] text-gray-500 font-mono mt-0.5">100% Segura</span>
+        </div>
+        <div className="flex flex-col items-center text-center p-2.5 bg-white rounded-md border-2 border-gray-900 shadow-[2px_2px_0px_#09090b]">
+          <Lock className="w-4 h-4 text-emerald-600 mb-1" />
+          <span className="text-[11px] font-black text-gray-900 leading-tight">Compra Segura</span>
+          <span className="text-[9px] text-gray-500 font-mono mt-0.5">Ambiente Seguro</span>
+        </div>
+        <div className="flex flex-col items-center text-center p-2.5 bg-white rounded-md border-2 border-gray-900 shadow-[2px_2px_0px_#09090b]">
+          <Mail className="w-4 h-4 text-blue-600 mb-1" />
+          <span className="text-[11px] font-black text-gray-900 leading-tight">Via E-mail</span>
+          <span className="text-[9px] text-gray-500 font-mono mt-0.5">Acesso Imediato</span>
         </div>
       </div>
 

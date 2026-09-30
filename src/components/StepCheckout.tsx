@@ -19,6 +19,7 @@ import {
   CHECKOUT_BASE_URL,
   WHATSAPP_BASE_URL,
   BONUSES_LIST,
+  CHECKOUT_VISUALS,
 } from '../data/funnelData';
 import { buildUrlWithParams } from '../utils/utm';
 import { FAQ } from './FAQ';
@@ -57,7 +58,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
       className="w-full flex flex-col items-center pb-20"
     >
       {/* Top Urgency Banner */}
-      <div className="w-full max-w-md bg-red-600 text-white p-3 rounded-md border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] mb-5 text-center flex items-center justify-between">
+      <div className="w-full max-w-md bg-red-600 text-white p-3 rounded-md border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] mb-4 text-center flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider">
           <Flame className="w-4 h-4 fill-amber-300 text-amber-300 animate-bounce" />
           <span>Oferta Especial Liberada</span>
@@ -66,6 +67,15 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
           <Clock className="w-3.5 h-3.5" />
           <span>{formatTimer(timeLeft)}</span>
         </div>
+      </div>
+
+      {/* Official Promotional Banner from First Link */}
+      <div className="w-full max-w-md mb-4 rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b]">
+        <img
+          src={CHECKOUT_VISUALS.headerBanner}
+          alt="Starflix Banner Oficial"
+          className="w-full h-auto object-cover"
+        />
       </div>
 
       {/* Video Headline */}
@@ -224,6 +234,32 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
               Impulsionar as vendas do seu negócio usando a Internet.
             </strong>
           </p>
+        </div>
+      </div>
+
+      {/* Official Course & Deliverables Showcase from First Link */}
+      <div className="w-full max-w-md mb-6 flex flex-col gap-2.5">
+        <div className="rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] bg-black">
+          <img
+            src={CHECKOUT_VISUALS.productBanner}
+            alt="Treinamento Starflix do Empreendedor Digital"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="grid grid-cols-3 gap-2">
+          {CHECKOUT_VISUALS.deliverables.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-md overflow-hidden border-2 border-gray-900 shadow-[2px_2px_0px_#09090b] bg-white group cursor-pointer"
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
