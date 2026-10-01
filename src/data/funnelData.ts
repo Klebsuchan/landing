@@ -1,7 +1,7 @@
 export const CHECKOUT_BASE_URL = 'https://chk.eduzz.com/E05NNXX49X';
 export const WHATSAPP_BASE_URL = 'https://wa.me/5585958548964?text=Oi%20meu%20s%C3%B3cio%20acabei%20de%20sair%20do%20teu%20quiz%20e%20tenho%20uma%20d%C3%BAvida.';
 
-// Visual assets e imagens do primeiro link (Kiwify Starflix)
+// Visual assets e imagens do primeiro link (Tráfego Fácil 2026)
 export const CHECKOUT_VISUALS = {
   headerBanner:
     'https://aws-assets.kiwify.com.br/cdn-cgi/image/fit=scale-down,width=1000/GLoyTdzx7HaqTzY/img_builder_aa681415-2e51-408a-9c3e-2a1ccb4630a5_fbc8e9c90535417f8cf541f28d6f61f5.png',
@@ -72,21 +72,17 @@ export const QUESTION_1: QuestionData = {
   id: 'step_0',
   badge: 'PERGUNTA 1 DE 2',
   question: 'Na hora de fazer seus anúncios patrocinados, o que mais te desanima?',
-  subtitle: 'Selecione a opção que mais reflete a sua realidade hoje:',
-  gifUrl:
-    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnRqcXdtanE3ZWhqNDQycGlzODF6aGgxa2FvOTd2aW9pZ2tqcWVlZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26n6WywJyh39n1pBu/giphy.gif',
+  gifUrl: '/step0.gif',
   options: [
     {
       id: 'oCJQlP',
       letter: 'A',
       text: 'Não saber por onde começar.',
-      desc: 'Sensação de estar perdido entre tantas configurações e ferramentas.',
     },
     {
       id: 'O4J1RD',
       letter: 'B',
       text: 'Gastar e não ver resultado.',
-      desc: 'Colocar dinheiro no botão turbinar ou no gerenciador sem retorno de vendas.',
     },
   ],
 };
@@ -95,64 +91,44 @@ export const QUESTION_2: QuestionData = {
   id: 'step_1',
   badge: 'PERGUNTA 2 DE 2',
   question: 'Porque você sente que precisa fazer anúncios?',
-  subtitle: 'Qual é a principal virada de chave que seu negócio precisa?',
-  gifUrl:
-    'https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXNja2k5ZTBpMXJ5OTJ2NXFzMzA1bW44MWYycjJjZjBvZGdrMzN6MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.gif',
+  gifUrl: '/step1.gif',
   options: [
     {
       id: '2eMAsw',
       letter: 'A',
       text: 'Porque preciso de mais clientes todos os dias.',
-      desc: 'Fluxo constante de novos contatos interessados no meu WhatsApp.',
     },
     {
       id: 'K6nAOd',
       letter: 'B',
       text: 'Porque minhas vendas estão paradas.',
-      desc: 'Recuperar o movimento e atingir novas pessoas na minha região.',
     },
     {
       id: 'kfn8NO',
       letter: 'C',
       text: 'Porque quero fazer meu negócio crescer de verdade.',
-      desc: 'Escalar faturamento com previsibilidade e consistência mês a mês.',
     },
   ],
 };
 
 export const SOLUTION_POINTS = [
   {
-    title: 'Fazer anúncios do jeito certo',
-    desc: 'Mesmo começando do absoluto zero, sem complicações técnicas.',
+    title: 'Fazer anúncios do jeito certo (mesmo começando do zero)',
   },
   {
     title: 'Aparecer todos os dias para pessoas da sua cidade',
-    desc: 'Alcançar exatamente quem tem interesse real no que você vende.',
   },
   {
     title: 'Saber exatamente o que fazer quando o anúncio não vende',
-    desc: 'Ajustar o criativo e o público sem queimar verba desnecessária.',
-  },
-  {
-    title: 'Atrair clientes prontos para comprar',
-    desc: 'Pessoas decididas que entram em contato já querendo fechar negócio.',
-  },
-  {
-    title: 'Usar uma estrutura validada',
-    desc: 'Investir pouco e colher vendas todos os dias com método comprovado.',
   },
 ];
 
-export const STARFLIX_MODULES = [
-  'Passo a passo para criar anúncios no gerenciador e no turbinar do jeito certo',
-  'Como fazer anúncios pelo celular e computador de um jeito simples',
-  'Estruturas validadas para atrair novos clientes todos os dias',
-  'Aulas práticas, diretas ao ponto e sem enrolação teórica',
-  'Como lotar seu WhatsApp com clientes qualificados',
-  'Como ganhar seguidores que realmente compram de você',
-  'Como vender seus produtos ou serviços pelo seu site',
-  'Ferramentas para aumentar o faturamento e organizar seu negócio',
+export const TRAFEGO_FACIL_MODULES = [
+  'Passo a passo para criar anúncios no gerenciador e no turbinar do jeito certo.',
+  'Como fazer anúncios pelo celular e computador de um jeito simples.',
+  'Estruturas validadas para atrair novos clientes todos os dias.',
 ];
+export const STARFLIX_MODULES = TRAFEGO_FACIL_MODULES;
 
 export const NICHES_DATA = [
   {
@@ -238,7 +214,7 @@ export interface FaqItem {
 export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'Como recebo o acesso à Starflix após o pagamento?',
+    question: 'Como recebo o acesso ao Tráfego Fácil 2026 após o pagamento?',
     answer:
       'Assim que sua inscrição for confirmada, você receberá instantaneamente um e-mail com seus dados de login e link da plataforma. Pagamentos via PIX ou Cartão de Crédito têm liberação imediata em menos de 1 minuto.',
     category: 'Acesso',
@@ -259,7 +235,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
   {
     id: 'faq-4',
-    question: 'A Starflix funciona para o meu tipo de negócio ou nicho?',
+    question: 'O Tráfego Fácil 2026 funciona para o meu tipo de negócio ou nicho?',
     answer:
       'Com certeza. As estratégias ensinadas foram validadas em mais de 100 segmentos diferentes, incluindo comércio local, prestação de serviços, delivery e alimentação, estética, saúde, moda, serviços automotivos, e-commerce e produtos digitais.',
     category: 'Segmentos',
@@ -275,7 +251,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'faq-6',
     question: 'Quais são as formas de pagamento disponíveis?',
     answer:
-      'Você pode pagar com 55% de desconto à vista via PIX (com liberação imediata) ou parcelado no Cartão de Crédito em até 12x de R$ 19,78.',
+      'Você pode pagar com 55% de desconto à vista via PIX (com liberação imediata) ou parcelado no Cartão de Crédito em até 12x de R$ 20,68.',
     category: 'Pagamento',
   },
 ];

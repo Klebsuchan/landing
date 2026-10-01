@@ -1,5 +1,5 @@
 // IndexedDB utility for persistent browser storage of video files
-const DB_NAME = 'starflix_sales_video_db';
+const DB_NAME = 'trafego_facil_2026_video_db';
 const STORE_NAME = 'videos';
 const VIDEO_KEY = 'curso_trafego_2026_landpage';
 

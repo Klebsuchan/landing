@@ -33,8 +33,8 @@ export const Header: React.FC<HeaderProps> = ({
             )}
 
             <div className="flex items-center gap-1.5">
-              <span className="font-black text-xl tracking-tight text-gray-900">
-                STAR<span className="text-red-600">FLIX</span>
+              <span className="font-black text-lg md:text-xl tracking-tight text-gray-900">
+                TRÁFEGO FÁCIL <span className="text-red-600">2026</span>
               </span>
               <span className="text-[10px] font-bold uppercase tracking-wider bg-red-100 text-red-700 px-1.5 py-0.5 rounded-sm border border-red-200">
                 Oficial

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import {
   Play,
@@ -23,6 +23,7 @@ import {
 } from '../data/funnelData';
 import { buildUrlWithParams } from '../utils/utm';
 import { FAQ } from './FAQ';
+import videoSource from './videofinal.mp4';
 
 interface StepCheckoutProps {
   utmParams: Record<string, string>;
@@ -30,7 +31,8 @@ interface StepCheckoutProps {
 
 export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
   const [timeLeft, setTimeLeft] = useState(14 * 60 + 59); // 14 mins 59 secs
-  const [showRealVideo, setShowRealVideo] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Countdown timer
   useEffect(() => {
@@ -39,6 +41,28 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
+
+  // Attempt autoplay when step loads
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      const promise = videoRef.current.play();
+      if (promise !== undefined) {
+        promise
+          .then(() => setIsPlaying(true))
+          .catch(() => setIsPlaying(false));
+      }
+    }
+  }, []);
+
+  const handleStartPlay = () => {
+    setIsPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.error('Playback error:', err);
+      });
+    }
+  };
 
   const formatTimer = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -57,7 +81,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
       transition={{ duration: 0.25 }}
       className="w-full flex flex-col items-center pb-20"
     >
-      {/* Top Urgency Banner */}
+      {/* Top Urgency Banner: Oferta Especial Liberada */}
       <div className="w-full max-w-md bg-red-600 text-white p-3 rounded-md border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] mb-4 text-center flex items-center justify-between">
         <div className="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider">
           <Flame className="w-4 h-4 fill-amber-300 text-amber-300 animate-bounce" />
@@ -69,51 +93,46 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </div>
       </div>
 
-      {/* Official Promotional Banner from First Link */}
-      <div className="w-full max-w-md mb-4 rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b]">
-        <img
-          src={CHECKOUT_VISUALS.headerBanner}
-          alt="Starflix Banner Oficial"
-          className="w-full h-auto object-cover"
-        />
-      </div>
-
       {/* Video Headline */}
-      <div className="text-center mb-3">
-        <h1 className="text-base md:text-lg font-black text-red-600 uppercase tracking-tight">
+      <div className="text-center mb-2">
+        <h1 className="text-sm md:text-base font-black text-red-600 uppercase tracking-tight">
           ASSISTE ESSE VÍDEO AQUI PRA VOCÊ ENTENDER:
         </h1>
       </div>
 
-      {/* Video Container */}
-      <div className="w-full max-w-md bg-gray-950 rounded-md overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-6 relative aspect-video flex flex-col justify-between p-4">
-        {showRealVideo ? (
-          <iframe
-            id="panda-021b0769-9ad3-4757-8ee9-2c683c39136e"
-            src="https://player-vz-510b4fe2-8aa.tv.pandavideo.com.br/embed/?v=021b0769-9ad3-4757-8ee9-2c683c39136e"
-            title="Vídeo de Apresentação Starflix"
-            className="w-full h-full border-none absolute inset-0"
-            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-            allowFullScreen
-          />
-        ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center text-center relative z-10">
-            <div className="w-14 h-14 rounded-sm bg-red-600 hover:bg-red-500 text-white flex items-center justify-center border-2 border-gray-950 shadow-[2px_2px_0px_#09090b] transition-transform hover:scale-105 cursor-pointer mb-3">
-              <Play className="w-6 h-6 fill-white translate-x-0.5" />
+      {/* Video Container (1m30s Video) */}
+      <div className="w-full max-w-md bg-black rounded-md overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-5 relative aspect-video flex flex-col justify-center items-center">
+        <video
+          ref={videoRef}
+          controls
+          playsInline
+          preload="auto"
+          onPlay={() => setIsPlaying(true)}
+          className="w-full h-full object-contain bg-black"
+        >
+          <source src={videoSource} type="video/mp4" />
+          <source src="/videofinal.mp4" type="video/mp4" />
+          <source src="/curso-trafego-2026-landpage.mp4" type="video/mp4" />
+          Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+
+        {!isPlaying && (
+          <div
+            onClick={handleStartPlay}
+            className="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-center p-4 z-20 cursor-pointer group bg-gradient-to-t from-black via-gray-950/85 to-black/90 transition-all duration-200"
+          >
+            <div className="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center border-2 border-white/90 shadow-[0_0_20px_rgba(220,38,38,0.7)] transition-all duration-200 group-hover:scale-110 active:scale-95 mb-3">
+              <Play className="w-8 h-8 fill-white translate-x-0.5 text-white" />
             </div>
 
             <span className="text-white font-black text-sm tracking-wide font-mono">
-              STAR<span className="text-red-500">FLIX</span> • VÍDEO OFICIAL
+              ASSISTIR VÍDEO COMPLETO • <span className="text-red-500">1:30 MIN</span>
             </span>
-            <span className="text-xs text-gray-400 font-mono mt-0.5">Duração: 03:24 min</span>
 
-            <button
-              type="button"
-              onClick={() => setShowRealVideo(true)}
-              className="mt-3 text-[11px] text-gray-300 underline hover:text-white transition-colors cursor-pointer"
-            >
-              (Clique para carregar o player externo se desejar)
-            </button>
+            <span className="text-[11px] text-gray-200 font-mono mt-2 bg-red-950/70 border border-red-800/80 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+              <span>Clique aqui para dar o play</span>
+            </span>
           </div>
         )}
       </div>
@@ -138,7 +157,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </div>
       </div>
 
-      {/* Primary CTA Button #1 */}
+      {/* Primary CTA Button #1 - Direct Eduzz link */}
       <div className="w-full max-w-md mb-6">
         <a
           href={checkoutUrl}
@@ -207,7 +226,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         <div className="flex items-center gap-2 text-gray-950 font-black text-sm md:text-base mb-3">
           <Gift className="w-5 h-5 text-red-600" />
           <span>
-            Bônus que você recebe na <span className="text-red-600">STARFLIX</span>:
+            Bônus que você recebe no <span className="text-red-600">TRÁFEGO FÁCIL 2026</span>:
           </span>
         </div>
 
@@ -237,16 +256,8 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </div>
       </div>
 
-      {/* Official Course & Deliverables Showcase from First Link */}
-      <div className="w-full max-w-md mb-6 flex flex-col gap-2.5">
-        <div className="rounded-md overflow-hidden border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] bg-black">
-          <img
-            src={CHECKOUT_VISUALS.productBanner}
-            alt="Treinamento Starflix do Empreendedor Digital"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-
+      {/* Deliverables Cards */}
+      <div className="w-full max-w-md mb-6">
         <div className="grid grid-cols-3 gap-2">
           {CHECKOUT_VISUALS.deliverables.map((item, idx) => (
             <div
@@ -263,7 +274,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </div>
       </div>
 
-      {/* Official Pricing Box (55% OFF) */}
+      {/* Official Pricing Box (55% OFF) - 12x de R$ 20,68 */}
       <div className="w-full max-w-md bg-white border-2 border-gray-900 rounded-md p-5 shadow-[5px_5px_0px_#09090b] mb-6 text-center relative overflow-hidden">
         <div className="absolute top-0 right-0 bg-red-600 text-white text-[10px] font-black uppercase tracking-wider py-1 px-3 border-b-2 border-l-2 border-gray-900 font-mono">
           55% OFF
@@ -291,7 +302,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
           <div className="flex items-baseline justify-center gap-1 mt-1">
             <span className="text-sm font-bold text-gray-700">12x de</span>
             <span className="text-4xl md:text-5xl font-black text-gray-950 tracking-tight font-mono">
-              R$ 19,78
+              R$ 20,68
             </span>
           </div>
           <div className="text-xs font-bold text-emerald-700 mt-1 font-mono">
@@ -348,35 +359,37 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
 
       {/* WhatsApp Doubts Section */}
       <div className="w-full max-w-md bg-amber-50/90 border-2 border-gray-900 rounded-md p-4 shadow-[3px_3px_0px_#09090b] mb-6 text-center">
-        <h3 className="text-sm md:text-base font-black text-gray-950 mb-1">
-          AINDA ESTÁ COM DÚVIDAS?
-        </h3>
+        <div className="flex items-center justify-center gap-2 text-gray-950 font-black text-sm mb-1">
+          <MessageCircle className="w-4 h-4 text-emerald-600" />
+          <span>Ficou com alguma dúvida?</span>
+        </div>
         <p className="text-xs text-gray-600 mb-3">
-          Fale diretamente com nossa equipe no WhatsApp para tirar qualquer dúvida antes de entrar:
+          Converse diretamente comigo no WhatsApp para tirar qualquer dúvida antes de garantir sua vaga.
         </p>
-
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full py-3 px-4 rounded-md font-bold text-sm text-gray-950 bg-amber-400 hover:bg-amber-500 border-2 border-gray-950 shadow-[2px_2px_0px_#09090b] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all flex items-center justify-center gap-2 group cursor-pointer"
+          className="inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-md font-black text-xs text-gray-950 bg-emerald-400 hover:bg-emerald-300 border-2 border-gray-950 shadow-[2px_2px_0px_#09090b] transition-all cursor-pointer"
         >
-          <MessageCircle className="w-4 h-4 fill-gray-950 text-amber-400" />
-          <span>Fale comigo no Whatsapp</span>
-          <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+          <MessageCircle className="w-3.5 h-3.5" />
+          <span>Chamar no WhatsApp</span>
+          <ExternalLink className="w-3 h-3 ml-0.5" />
         </a>
       </div>
 
-      {/* Security Footer Seals */}
-      <div className="w-full max-w-md flex flex-wrap items-center justify-center gap-3 text-gray-500 text-xs py-2 border-t border-gray-200 mb-2 font-mono">
+      {/* Payment Methods Footer Info */}
+      <div className="w-full max-w-md flex flex-wrap items-center justify-center gap-3 text-xs text-gray-600 font-mono mb-6">
         <div className="flex items-center gap-1">
-          <Lock className="w-3 h-3 text-gray-600" />
-          <span>Pagamento Seguro</span>
+          <CreditCard className="w-3.5 h-3.5 text-gray-600" />
+          <span>Cartão em até 12x</span>
         </div>
+        <span>•</span>
         <div className="flex items-center gap-1">
-          <CreditCard className="w-3 h-3 text-gray-600" />
-          <span>PIX & Cartão em 12x</span>
+          <span className="font-bold text-emerald-600">PIX</span>
+          <span>Aprovação Imediata</span>
         </div>
+        <span>•</span>
         <div className="flex items-center gap-1">
           <Sparkles className="w-3 h-3 text-gray-600" />
           <span>Acesso Imediato</span>
@@ -391,7 +404,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
               55% de Desconto
             </span>
             <span className="text-sm font-black text-gray-950 leading-tight font-mono">
-              12x de <span className="text-emerald-700">R$ 19,78</span>
+              12x de <span className="text-emerald-700">R$ 20,68</span>
             </span>
           </div>
 

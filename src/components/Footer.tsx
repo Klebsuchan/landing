@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-md mx-auto px-4 flex flex-col items-center gap-2">
         <div className="flex items-center gap-1.5 font-bold text-gray-900 font-sans">
           <Shield className="w-4 h-4 text-emerald-600" />
-          <span>Starflix do Empreendedor Digital</span>
+          <span>Tráfego Fácil 2026</span>
         </div>
 
         <p className="text-[11px] text-gray-500">

@@ -29,7 +29,7 @@ export const FAQ: React.FC<FAQProps> = ({ items = FAQ_ITEMS, className = '' }) =
           Perguntas Frequentes (FAQ)
         </h3>
         <p className="text-xs text-gray-600 mt-1">
-          Tire suas dúvidas antes de garantir sua vaga na Starflix
+          Tire suas dúvidas antes de garantir sua vaga no Tráfego Fácil 2026
         </p>
       </div>
 
