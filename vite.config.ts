@@ -2,7 +2,10 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig, Plugin } from 'vite';
+
+const rootDir = fileURLToPath(new URL('.', import.meta.url));
 
 function videoUploadPlugin(): Plugin {
   return {
@@ -10,8 +13,8 @@ function videoUploadPlugin(): Plugin {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.method === 'POST' && req.url === '/api/upload-video') {
-          const publicTarget = path.resolve(__dirname, 'public/novovideo.mp4');
-          const srcTarget = path.resolve(__dirname, 'src/components/novovideo.mp4');
+          const publicTarget = path.resolve(rootDir, 'public/novovideo.mp4');
+          const srcTarget = path.resolve(rootDir, 'src/components/novovideo.mp4');
           const writeStream = fs.createWriteStream(publicTarget);
           req.pipe(writeStream);
           writeStream.on('finish', () => {
@@ -40,8 +43,11 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss(), videoUploadPlugin()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': rootDir,
       },
+    },
+    build: {
+      chunkSizeWarningLimit: 1500,
     },
     server: {
       port: 3000,

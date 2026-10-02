@@ -21,7 +21,6 @@ import {
 } from '../data/funnelData';
 import { buildUrlWithParams } from '../utils/utm';
 import { FAQ } from './FAQ';
-import novoVideoSrc from './novovideo.mp4';
 
 interface StepCheckoutProps {
   utmParams: Record<string, string>;
@@ -83,7 +82,6 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
           controlsList="nodownload"
           className="w-full h-full object-cover"
         >
-          <source src={novoVideoSrc} type="video/mp4" />
           <source src={FINAL_VIDEO_CONFIG.videoUrl} type="video/mp4" />
           Seu navegador não suporta a reprodução deste vídeo.
         </video>

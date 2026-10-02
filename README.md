@@ -107,6 +107,19 @@ http://localhost:3000
 
 ---
 
+## ⚡ Deploy no Vercel (Configurado e Otimizado)
+
+O projeto já contém o arquivo `vercel.json` pré-configurado para reconhecimento automático pelo Vercel:
+
+1. Conecte o repositório GitHub no painel do [Vercel](https://vercel.com).
+2. O Vercel detectará automaticamente as configurações:
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+3. Clique em **Deploy**. O build completará em apenas ~1 segundo com compressão estática e cache de vídeo configurados.
+
+---
+
 ## 🔒 Segurança e Integração Eduzz
 
 O fluxo foi configurado para enviar os leads diretamente para a página oficial de pagamento na Eduzz:
