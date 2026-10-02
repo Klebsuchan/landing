@@ -50,8 +50,11 @@ export const CHECKOUT_VISUALS = {
   ],
 };
 
-// URL padrão para o vídeo de depoimento real do aluno (arquivo enviado pelo usuário)
-export const DEFAULT_TESTIMONIAL_VIDEO_URL = '/curso-trafego-2026-landpage.mp4';
+// Configuração do vídeo final de vendas
+export const FINAL_VIDEO_CONFIG = {
+  videoUrl: '/novovideo.mp4',
+  title: 'ASSISTE ESSE VÍDEO AQUI PRA VOCÊ ENTENDER:',
+};
 
 export interface QuestionData {
   id: string;

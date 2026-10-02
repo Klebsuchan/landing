@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {
-  Play,
   ShieldCheck,
   Gift,
   CheckCircle2,
@@ -18,10 +17,11 @@ import {
   CHECKOUT_BASE_URL,
   BONUSES_LIST,
   CHECKOUT_VISUALS,
+  FINAL_VIDEO_CONFIG,
 } from '../data/funnelData';
 import { buildUrlWithParams } from '../utils/utm';
 import { FAQ } from './FAQ';
-import videoSource from './videofinal.mp4';
+import novoVideoSrc from './novovideo.mp4';
 
 interface StepCheckoutProps {
   utmParams: Record<string, string>;
@@ -29,8 +29,6 @@ interface StepCheckoutProps {
 
 export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
   const [timeLeft, setTimeLeft] = useState(14 * 60 + 59); // 14 mins 59 secs
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Countdown timer
   useEffect(() => {
@@ -39,28 +37,6 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
-
-  // Attempt autoplay when step loads
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      const promise = videoRef.current.play();
-      if (promise !== undefined) {
-        promise
-          .then(() => setIsPlaying(true))
-          .catch(() => setIsPlaying(false));
-      }
-    }
-  }, []);
-
-  const handleStartPlay = () => {
-    setIsPlaying(true);
-    if (videoRef.current) {
-      videoRef.current.play().catch((err) => {
-        console.error('Playback error:', err);
-      });
-    }
-  };
 
   const formatTimer = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -93,45 +69,22 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
       {/* Video Headline */}
       <div className="text-center mb-2">
         <h1 className="text-sm md:text-base font-black text-red-600 uppercase tracking-tight">
-          ASSISTE ESSE VÍDEO AQUI PRA VOCÊ ENTENDER:
+          {FINAL_VIDEO_CONFIG.title}
         </h1>
       </div>
 
-      {/* Video Container (1m30s Video) */}
-      <div className="w-full max-w-md bg-black rounded-md overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-5 relative aspect-video flex flex-col justify-center items-center">
+      {/* Video Container (Vídeo final de vendas - novovideo.mp4) */}
+      <div className="w-full max-w-md bg-black rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-5 relative aspect-video flex items-center justify-center">
         <video
-          ref={videoRef}
           controls
           playsInline
-          preload="auto"
-          onPlay={() => setIsPlaying(true)}
-          className="w-full h-full object-contain bg-black"
+          preload="metadata"
+          className="w-full h-full object-cover"
         >
-          <source src={videoSource} type="video/mp4" />
-          <source src="/videofinal.mp4" type="video/mp4" />
-          <source src="/curso-trafego-2026-landpage.mp4" type="video/mp4" />
+          <source src={novoVideoSrc} type="video/mp4" />
+          <source src={FINAL_VIDEO_CONFIG.videoUrl} type="video/mp4" />
           Seu navegador não suporta a reprodução deste vídeo.
         </video>
-
-        {!isPlaying && (
-          <div
-            onClick={handleStartPlay}
-            className="absolute inset-0 w-full h-full flex flex-col items-center justify-center text-center p-4 z-20 cursor-pointer group bg-gradient-to-t from-black via-gray-950/85 to-black/90 transition-all duration-200"
-          >
-            <div className="w-16 h-16 rounded-full bg-red-600 hover:bg-red-500 text-white flex items-center justify-center border-2 border-white/90 shadow-[0_0_20px_rgba(220,38,38,0.7)] transition-all duration-200 group-hover:scale-110 active:scale-95 mb-3">
-              <Play className="w-8 h-8 fill-white translate-x-0.5 text-white" />
-            </div>
-
-            <span className="text-white font-black text-sm tracking-wide font-mono">
-              ASSISTIR VÍDEO COMPLETO • <span className="text-red-500">1:30 MIN</span>
-            </span>
-
-            <span className="text-[11px] text-gray-200 font-mono mt-2 bg-red-950/70 border border-red-800/80 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span>Clique aqui para dar o play</span>
-            </span>
-          </div>
-        )}
       </div>
 
       {/* Ready Headline */}
