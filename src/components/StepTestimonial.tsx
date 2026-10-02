@@ -9,54 +9,60 @@ interface StepTestimonialProps {
 export const StepTestimonial: React.FC<StepTestimonialProps> = ({ onNext }) => {
   const [isPlayingAudio, setIsPlayingAudio] = useState(false);
   const [audioSeconds, setAudioSeconds] = useState(8);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const toggleAudio = () => {
-    if (isPlayingAudio) {
-      setIsPlayingAudio(false);
-      if (timerRef.current) clearInterval(timerRef.current);
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-    } else {
-      setIsPlayingAudio(true);
-      setAudioSeconds(0);
-
-      // Play synthesized realistic student voice if supported by browser
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(
-          'Fala pessoal, aqui é o Rair da Casa dos Capacetes. Com o método do Tráfego Fácil 2026, saímos de dez mil para mais de cem mil reais por mês! O negócio realmente funciona.'
-        );
-        utterance.lang = 'pt-BR';
-        utterance.rate = 1.05;
-        utterance.onend = () => {
-          setIsPlayingAudio(false);
-          setAudioSeconds(8);
-        };
-        window.speechSynthesis.speak(utterance);
-      }
-
-      // Count up to 8 seconds
-      let sec = 0;
-      if (timerRef.current) clearInterval(timerRef.current);
-      timerRef.current = setInterval(() => {
-        sec += 1;
-        if (sec >= 8) {
-          setAudioSeconds(8);
-          setIsPlayingAudio(false);
-          if (timerRef.current) clearInterval(timerRef.current);
-        } else {
-          setAudioSeconds(sec);
-        }
-      }, 1000);
-    }
-  };
+  const audioElementRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    const audio = new Audio('/assets/inlead/Z7iAM-whatsapp-video-2026-02-03-at-160408.mp3');
+    audio.preload = 'auto';
+
+    audio.onended = () => {
+      setIsPlayingAudio(false);
+      setAudioSeconds(8);
+    };
+
+    audio.ontimeupdate = () => {
+      if (audio.duration) {
+        setAudioSeconds(Math.min(8, Math.round(audio.currentTime)));
+      }
+    };
+
+    audioElementRef.current = audio;
+
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      audio.pause();
+      audio.currentTime = 0;
     };
   }, []);
+
+  const toggleAudio = () => {
+    if (!audioElementRef.current) return;
+
+    if (isPlayingAudio) {
+      audioElementRef.current.pause();
+      setIsPlayingAudio(false);
+    } else {
+      audioElementRef.current.currentTime = 0;
+      audioElementRef.current
+        .play()
+        .then(() => {
+          setIsPlayingAudio(true);
+        })
+        .catch(() => {
+          // Fallback if browser blocks autoplay
+          setIsPlayingAudio(true);
+          const timer = setInterval(() => {
+            setAudioSeconds((s) => {
+              if (s <= 1) {
+                clearInterval(timer);
+                setIsPlayingAudio(false);
+                return 8;
+              }
+              return s - 1;
+            });
+          }, 1000);
+        });
+    }
+  };
 
   return (
     <motion.div
@@ -66,19 +72,26 @@ export const StepTestimonial: React.FC<StepTestimonialProps> = ({ onNext }) => {
       transition={{ duration: 0.25 }}
       className="w-full flex flex-col items-center pb-8"
     >
-      {/* Title Header matching Screenshot */}
+      {/* Title Header matching inlead.digital */}
       <div className="text-center mb-5">
         <h2 className="text-xl md:text-2xl font-black text-gray-950 leading-snug">
-          Clique no áudio e escute o que meu aluno disse 🔊
+          Clique no áudio e escute o que meu aluno disse 😮
         </h2>
       </div>
 
       {/* Audio Player Card */}
       <div className="w-full max-w-md bg-white border-2 border-gray-900 rounded-xl p-4 shadow-[4px_4px_0px_#09090b] mb-4">
         <div className="flex items-center justify-between mb-3 border-b border-gray-100 pb-2">
-          <span className="font-bold text-gray-900 text-sm md:text-base flex items-center gap-1.5">
-            <span>Rair - Casa dos Capacetes</span>
-          </span>
+          <div className="flex items-center gap-2">
+            <img
+              src="/assets/inlead/Xa4xE-490223871-687534127012772-3182568221928524864-n.jpg"
+              alt="Rair"
+              className="w-8 h-8 rounded-full border border-gray-300 object-cover"
+            />
+            <span className="font-bold text-gray-900 text-sm md:text-base">
+              Rair - Casa dos Capacetes
+            </span>
+          </div>
           <span className="text-xs font-mono font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-sm border border-red-200 flex items-center gap-1">
             <Volume2 className="w-3.5 h-3.5" />
             <span>00:0{audioSeconds}</span>
@@ -100,7 +113,7 @@ export const StepTestimonial: React.FC<StepTestimonialProps> = ({ onNext }) => {
             )}
           </button>
 
-          {/* Simulated animated waveform */}
+          {/* Animated waveform */}
           <div className="flex-1 flex items-center gap-1 h-8 px-2 overflow-hidden">
             {[40, 65, 30, 85, 95, 45, 70, 90, 60, 40, 75, 80, 50, 90, 70, 45, 80, 60, 35, 70, 85, 40].map(
               (height, i) => (
@@ -141,11 +154,11 @@ export const StepTestimonial: React.FC<StepTestimonialProps> = ({ onNext }) => {
         </div>
       </div>
 
-      {/* Instagram Profile Proof Card from Screenshot */}
+      {/* Instagram WhatsApp Proof Image from inlead.digital */}
       <div className="w-full max-w-md rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-6 bg-white">
         <img
-          src="/assets/step4_instagram_proof.png"
-          alt="Instagram do aluno: Casa dos Capacetes - 12,7 mil seguidores"
+          src="/assets/inlead/jfdpl-whatsapp-image-2025-10-30-at-104709-pm.jpg"
+          alt="Comprovante de resultado real do aluno"
           className="w-full h-auto object-cover"
           loading="eager"
         />
@@ -158,7 +171,7 @@ export const StepTestimonial: React.FC<StepTestimonialProps> = ({ onNext }) => {
           onClick={onNext}
           className="w-full py-4 px-6 rounded-xl font-black text-base text-white bg-red-600 hover:bg-red-700 border-2 border-gray-950 shadow-[3px_3px_0px_#09090b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#09090b] transition-all duration-150 flex items-center justify-center gap-2 group cursor-pointer"
         >
-          <span>Quero o mesmo resultado</span>
+          <span>Eu quero isso também</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>

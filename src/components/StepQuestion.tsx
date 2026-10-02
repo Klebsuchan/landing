@@ -42,8 +42,8 @@ export const StepQuestion: React.FC<StepQuestionProps> = ({
             onError={(e) => {
               const fallback =
                 data.id === 'step_0'
-                  ? 'https://i.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif'
-                  : 'https://i.giphy.com/media/LdOyjZ7io5Msw/giphy.gif';
+                  ? 'https://media.inlead.cloud/uploads/22779/2025-10-28/FFVjO-cry-baby-crying-gif-by-luis-ricardo.gif'
+                  : 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXRjaTAwMzJqNmg3Z2JuOHNhcnk0YWNjbDhub3dmZ3RtMnV3c2d1MSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wyi5tYZJvkMLIgRmXv/giphy.gif';
               if ((e.currentTarget as HTMLImageElement).src !== fallback) {
                 (e.currentTarget as HTMLImageElement).src = fallback;
               }

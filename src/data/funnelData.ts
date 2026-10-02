@@ -1,5 +1,4 @@
 export const CHECKOUT_BASE_URL = 'https://chk.eduzz.com/E05NNXX49X';
-export const WHATSAPP_BASE_URL = 'https://wa.me/5585958548964?text=Oi%20meu%20s%C3%B3cio%20acabei%20de%20sair%20do%20teu%20quiz%20e%20tenho%20uma%20d%C3%BAvida.';
 
 // Visual assets e imagens do primeiro link (Tráfego Fácil 2026)
 export const CHECKOUT_VISUALS = {
@@ -27,7 +26,7 @@ export const CHECKOUT_VISUALS = {
       desc: 'Anúncios prontos só para copiar e colar no seu negócio',
     },
     {
-      title: 'Como Lotar o WhatsApp de Clientes',
+      title: 'Como Atrair uma Enxurrada de Clientes',
       url: 'https://aws-assets.kiwify.com.br/GLoyTdzx7HaqTzY/img_builder_24809cf8-5098-48f4-9d60-9e254cac1a60_36f4ae4e6b00439180eb4ee82848e4ac.png',
       desc: 'Fluxo constante de novos contatos todos os dias',
     },
@@ -72,7 +71,7 @@ export const QUESTION_1: QuestionData = {
   id: 'step_0',
   badge: 'PERGUNTA 1 DE 2',
   question: 'Na hora de fazer seus anúncios patrocinados, o que mais te desanima?',
-  gifUrl: '/step0.gif',
+  gifUrl: '/assets/inlead/FFVjO-cry-baby-crying-gif-by-luis-ricardo.gif',
   options: [
     {
       id: 'oCJQlP',
@@ -91,7 +90,7 @@ export const QUESTION_2: QuestionData = {
   id: 'step_1',
   badge: 'PERGUNTA 2 DE 2',
   question: 'Porque você sente que precisa fazer anúncios?',
-  gifUrl: '/step1.gif',
+  gifUrl: '/assets/inlead/giphy.gif',
   options: [
     {
       id: '2eMAsw',
@@ -121,14 +120,49 @@ export const SOLUTION_POINTS = [
   {
     title: 'Saber exatamente o que fazer quando o anúncio não vende',
   },
+  {
+    title: 'Atrair clientes prontos para comprar.',
+  },
+  {
+    title: 'Usar uma estrutura validada, que investe pouco e te faz vender todos os dias.',
+  },
 ];
+
+export const SOLUTION_GIF_URL = '/assets/inlead/9aVvY-blah-blah-blah-whatever-gif-by-minions.gif';
 
 export const TRAFEGO_FACIL_MODULES = [
   'Passo a passo para criar anúncios no gerenciador e no turbinar do jeito certo.',
   'Como fazer anúncios pelo celular e computador de um jeito simples.',
   'Estruturas validadas para atrair novos clientes todos os dias.',
+  'Aulas práticas e objetivas direto ao ponto.',
+  'Como atrair e reter clientes fiéis no seu negócio.',
+  'Como ganhar seguidores altamente qualificados.',
+  'Como vender pelo seu site ou catálogo digital.',
+  'Ferramentas para aumentar o faturamento e organizar seu negócio.',
 ];
 export const STARFLIX_MODULES = TRAFEGO_FACIL_MODULES;
+
+export const INLEAD_ASSETS = {
+  step0Gif: '/assets/inlead/FFVjO-cry-baby-crying-gif-by-luis-ricardo.gif',
+  step1Gif: '/assets/inlead/giphy.gif',
+  step2Gif: '/assets/inlead/9aVvY-blah-blah-blah-whatever-gif-by-minions.gif',
+  step4Audio: '/assets/inlead/Z7iAM-whatsapp-video-2026-02-03-at-160408.mp3',
+  step4Avatar: '/assets/inlead/Xa4xE-490223871-687534127012772-3182568221928524864-n.jpg',
+  step4Proof: '/assets/inlead/jfdpl-whatsapp-image-2025-10-30-at-104709-pm.jpg',
+  step6OfferImage: '/assets/inlead/766Ee-valor-insta-720-x-880-px.png',
+  carouselImages: [
+    '/assets/inlead/B6GFZ-4.png',
+    '/assets/inlead/AvhIb-whatsapp-image-2025-08-19-at-214059.jpg',
+    '/assets/inlead/3jNrY-depoimentos-4.png',
+    '/assets/inlead/9UQPv-6.png',
+    '/assets/inlead/RJnx0-6.png',
+    '/assets/inlead/mQVvY-3.png',
+    '/assets/inlead/wuaB6-3.png',
+    '/assets/inlead/V0iSk-2.png',
+    '/assets/inlead/rGuKT-1.png',
+    '/assets/inlead/MIHKv-depoimentos-1.png',
+  ],
+};
 
 export const NICHES_DATA = [
   {
@@ -155,7 +189,7 @@ export const NICHES_DATA = [
   {
     id: 'nicho-4',
     name: 'Delivery, Restaurantes & Lanchonetes',
-    result: 'Pedidos diários no WhatsApp sem taxas abusivas',
+    result: 'Pedidos diários direto com você sem taxas abusivas',
     highlight: 'Clientes pedindo direto com você, aumentando a margem de lucro.',
     tag: 'Alimentação',
   },

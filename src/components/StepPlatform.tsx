@@ -17,23 +17,13 @@ export const StepPlatform: React.FC<StepPlatformProps> = ({ onNext }) => {
       className="w-full flex flex-col items-center pb-8"
     >
       {/* Title Header matching the screenshot */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-6">
         <h2 className="text-2xl md:text-3xl font-black text-gray-950 leading-tight">
           No <span className="text-red-600">TRÁFEGO FÁCIL 2026</span> eu vou te mostrar:
         </h2>
       </div>
 
-      {/* Course Modules Banner from User Screenshot */}
-      <div className="w-full max-w-md rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-6 bg-black flex items-center justify-center">
-        <img
-          src="/assets/step3_modules_banner.png"
-          alt="Módulos Tráfego Fácil 2026"
-          className="w-full h-auto object-cover"
-          loading="eager"
-        />
-      </div>
-
-      {/* 3 Main Bullets from Screenshot */}
+      {/* Bullets List */}
       <div className="w-full max-w-md flex flex-col gap-3 mb-6">
         {TRAFEGO_FACIL_MODULES.map((item, idx) => (
           <div
@@ -57,7 +47,7 @@ export const StepPlatform: React.FC<StepPlatformProps> = ({ onNext }) => {
           onClick={onNext}
           className="w-full py-4 px-6 rounded-xl font-black text-base text-white bg-red-600 hover:bg-red-700 border-2 border-gray-950 shadow-[3px_3px_0px_#09090b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#09090b] transition-all duration-150 flex items-center justify-center gap-2 group cursor-pointer"
         >
-          <span>Disso que eu preciso</span>
+          <span>É DISSO QUE EU PRECISO</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>

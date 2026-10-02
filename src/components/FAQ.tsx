@@ -99,7 +99,7 @@ export const FAQ: React.FC<FAQProps> = ({ items = FAQ_ITEMS, className = '' }) =
       <div className="mt-3 bg-emerald-50 border border-emerald-300 rounded-sm p-2.5 flex items-center gap-2 text-emerald-900">
         <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
         <p className="text-[11px] font-semibold leading-tight">
-          Ainda com alguma dúvida não respondida? Nosso time está online no WhatsApp para te ajudar agora.
+          Acesso imediato e garantia incondicional de 7 dias com suporte dedicado aos alunos.
         </p>
       </div>
     </div>

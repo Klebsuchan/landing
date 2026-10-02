@@ -7,7 +7,6 @@ import {
   CheckCircle2,
   Clock,
   Sparkles,
-  MessageCircle,
   CreditCard,
   Lock,
   ArrowRight,
@@ -17,7 +16,6 @@ import {
 } from 'lucide-react';
 import {
   CHECKOUT_BASE_URL,
-  WHATSAPP_BASE_URL,
   BONUSES_LIST,
   CHECKOUT_VISUALS,
 } from '../data/funnelData';
@@ -71,7 +69,6 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
   };
 
   const checkoutUrl = buildUrlWithParams(CHECKOUT_BASE_URL, utmParams);
-  const whatsappUrl = buildUrlWithParams(WHATSAPP_BASE_URL, utmParams);
 
   return (
     <motion.div
@@ -256,22 +253,14 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </div>
       </div>
 
-      {/* Deliverables Cards */}
-      <div className="w-full max-w-md mb-6">
-        <div className="grid grid-cols-3 gap-2">
-          {CHECKOUT_VISUALS.deliverables.map((item, idx) => (
-            <div
-              key={idx}
-              className="rounded-md overflow-hidden border-2 border-gray-900 shadow-[2px_2px_0px_#09090b] bg-white group cursor-pointer"
-            >
-              <img
-                src={item.url}
-                alt={item.title}
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
-              />
-            </div>
-          ))}
-        </div>
+      {/* Official Inlead Offer Image */}
+      <div className="w-full max-w-md rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-6 bg-white">
+        <img
+          src="/assets/inlead/766Ee-valor-insta-720-x-880-px.png"
+          alt="Condições de Acesso Tráfego Fácil 2026"
+          className="w-full h-auto object-contain"
+          loading="eager"
+        />
       </div>
 
       {/* Official Pricing Box (55% OFF) - 12x de R$ 20,68 */}
@@ -356,27 +345,6 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
 
       {/* Accordion FAQ Component */}
       <FAQ />
-
-      {/* WhatsApp Doubts Section */}
-      <div className="w-full max-w-md bg-amber-50/90 border-2 border-gray-900 rounded-md p-4 shadow-[3px_3px_0px_#09090b] mb-6 text-center">
-        <div className="flex items-center justify-center gap-2 text-gray-950 font-black text-sm mb-1">
-          <MessageCircle className="w-4 h-4 text-emerald-600" />
-          <span>Ficou com alguma dúvida?</span>
-        </div>
-        <p className="text-xs text-gray-600 mb-3">
-          Converse diretamente comigo no WhatsApp para tirar qualquer dúvida antes de garantir sua vaga.
-        </p>
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-md font-black text-xs text-gray-950 bg-emerald-400 hover:bg-emerald-300 border-2 border-gray-950 shadow-[2px_2px_0px_#09090b] transition-all cursor-pointer"
-        >
-          <MessageCircle className="w-3.5 h-3.5" />
-          <span>Chamar no WhatsApp</span>
-          <ExternalLink className="w-3 h-3 ml-0.5" />
-        </a>
-      </div>
 
       {/* Payment Methods Footer Info */}
       <div className="w-full max-w-md flex flex-wrap items-center justify-center gap-3 text-xs text-gray-600 font-mono mb-6">

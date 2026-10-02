@@ -16,15 +16,15 @@ export const StepSolution: React.FC<StepSolutionProps> = ({ onNext }) => {
       transition={{ duration: 0.25 }}
       className="w-full flex flex-col items-center pb-8"
     >
-      {/* Top Animated GIF */}
+      {/* Top Animated GIF from inlead.digital */}
       <div className="w-full max-w-md rounded-xl overflow-hidden mb-5 bg-black border-2 border-gray-900 shadow-[3px_3px_0px_#09090b] flex items-center justify-center relative aspect-video">
         <img
-          src="/step2.gif"
+          src="/assets/inlead/9aVvY-blah-blah-blah-whatever-gif-by-minions.gif"
           alt="O que realmente vai destravar suas vendas"
           className="w-full h-full object-cover"
           loading="eager"
           onError={(e) => {
-            const fallback = 'https://i.giphy.com/media/3o6gDWzmAzrpi5DQU8/giphy.gif';
+            const fallback = 'https://media.inlead.cloud/uploads/22779/2025-10-28/9aVvY-blah-blah-blah-whatever-gif-by-minions.gif';
             if ((e.currentTarget as HTMLImageElement).src !== fallback) {
               (e.currentTarget as HTMLImageElement).src = fallback;
             }
@@ -67,7 +67,7 @@ export const StepSolution: React.FC<StepSolutionProps> = ({ onNext }) => {
           onClick={onNext}
           className="w-full py-4 px-6 rounded-xl font-black text-base text-white bg-red-600 hover:bg-red-700 border-2 border-gray-950 shadow-[3px_3px_0px_#09090b] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[1px_1px_0px_#09090b] transition-all duration-150 flex items-center justify-center gap-2 group cursor-pointer"
         >
-          <span>Vou dominar isso</span>
+          <span>Vou dominar isso agora</span>
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>

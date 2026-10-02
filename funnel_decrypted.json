@@ -1,0 +1,865 @@
+{
+  "id": 98263,
+  "hash": "JGlG8Q",
+  "title": "NOVO STARFLIX",
+  "slug": "novo-starflix",
+  "description": "",
+  "domain": null,
+  "origin": "R2",
+  "status": 1,
+  "steps": [
+    {
+      "id": "aOnVys",
+      "title": "pergunta",
+      "layers": [
+        {
+          "id": "9RLqDz",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": [],
+          "content": {
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2025-10-28/FFVjO-cry-baby-crying-gif-by-luis-ricardo.gif",
+              "type": "image",
+              "width": 196,
+              "height": 208
+            },
+            "id": "BfAb5D",
+            "name": "a1GD2g"
+          },
+          "step": "aOnVys"
+        },
+        {
+          "id": "Ddg9E7",
+          "title": "Escolha Única",
+          "icon": "listRadio",
+          "type": "options",
+          "design": {
+            "icon": "select",
+            "iconPosition": "start",
+            "grid": "grid-cols-1",
+            "orientation": "horizontal",
+            "order": "default",
+            "transparentImage": true,
+            "aspectImage": "aspect-[1/1]",
+            "basis": 100,
+            "background": "fetured"
+          },
+          "content": {
+            "name": "opcoes_wWIkA3",
+            "required": true,
+            "multiple": false,
+            "introType": "text",
+            "introduction": "<h2 class=\"ql-align-center\"><strong style=\"color: rgb(9, 9, 11); background-color: rgb(255, 255, 255);\">Na hora de fazer seus anúncios patrocinados,o que mais te desanima?</strong></h2>",
+            "options": [
+              {
+                "id": "oCJQlP",
+                "image": {
+                  "type": "image",
+                  "src": null
+                },
+                "score": 1,
+                "value": "A",
+                "label": "<p>Não saber por onde começar.</p>",
+                "destination": "next",
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "O4J1RD",
+                "image": {
+                  "type": "image",
+                  "src": null
+                },
+                "score": 2,
+                "value": "B",
+                "label": "<p>Gastar&nbsp;e&nbsp;não&nbsp;ver&nbsp;resultado.</p>",
+                "destination": "next",
+                "chosen": false,
+                "selected": false
+              }
+            ],
+            "type": "single",
+            "id": "JYSs35"
+          },
+          "step": "aOnVys"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "nmfEMk",
+      "title": "pergunta",
+      "layers": [
+        {
+          "id": "iRxMQb",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": [],
+          "content": {
+            "image": {
+              "src": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXRjaTAwMzJqNmg3Z2JuOHNhcnk0YWNjbDhub3dmZ3RtMnV3c2d1MSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/wyi5tYZJvkMLIgRmXv/giphy.gif",
+              "type": "external",
+              "width": 480,
+              "height": 270
+            },
+            "id": "BfAb5D",
+            "name": "FFfXdY"
+          }
+        },
+        {
+          "id": "TRoiRZ",
+          "title": "Escolha Única",
+          "icon": "listRadio",
+          "type": "options",
+          "design": {
+            "icon": "select",
+            "iconPosition": "start",
+            "grid": "grid-cols-1",
+            "orientation": "horizontal",
+            "order": "default",
+            "transparentImage": true,
+            "aspectImage": "aspect-[1/1]",
+            "basis": 100,
+            "background": "fetured"
+          },
+          "content": {
+            "name": "opcoes_W4NLia",
+            "required": true,
+            "multiple": false,
+            "introType": "text",
+            "introduction": "<h2 class=\"ql-align-center\"><strong style=\"color: rgb(9, 9, 11); background-color: rgb(255, 255, 255);\">Porque você sente que precisa fazer anúncios?</strong></h2>",
+            "options": [
+              {
+                "id": "2eMAsw",
+                "image": {
+                  "type": "image",
+                  "src": null
+                },
+                "score": 1,
+                "value": "A",
+                "label": "<p>Porque preciso de mais clientes todos os dias.</p>",
+                "destination": "next",
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "K6nAOd",
+                "image": {
+                  "type": "image",
+                  "src": null
+                },
+                "score": 2,
+                "value": "B",
+                "label": "<p>Porque minhas vendas estão paradas.</p>",
+                "destination": "next",
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "kfn8NO",
+                "label": "<p>Porque quero fazer meu negócio crescer de verdade.</p>",
+                "chosen": false,
+                "selected": false
+              }
+            ],
+            "type": "single",
+            "id": "JYSs35"
+          }
+        }
+      ],
+      "position": {
+        "y": 100,
+        "x": 100
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "Y3vh1Q",
+      "title": "pergunta",
+      "layers": [
+        {
+          "id": "SXAuZS",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": {
+            "basis": 100
+          },
+          "content": {
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2025-10-28/9aVvY-blah-blah-blah-whatever-gif-by-minions.gif",
+              "type": "image",
+              "width": 480,
+              "height": 270
+            },
+            "id": "T3B9kN",
+            "name": "bcVCDj"
+          }
+        },
+        {
+          "id": "8PV6Za",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h2 class=\"ql-align-center\">Vão&nbsp;te&nbsp;oferecer&nbsp;milhares&nbsp;de&nbsp;“<span style=\"color: rgb(9, 9, 11);\">fórmulas&nbsp;mágicas</span>&quot;,&nbsp;mas&nbsp;o&nbsp;que&nbsp;realmente&nbsp;vai&nbsp;<strong style=\"color: rgb(220, 38, 38);\">destravar&nbsp;suas&nbsp;vendas</strong>&nbsp;é:</h2><h3 class=\"ql-align-center\"></h3><p>✅&nbsp;<span style=\"color: rgb(9, 9, 11);\">Fazer</span><strong style=\"color: rgb(9, 9, 11);\">&nbsp;anúncios&nbsp;do&nbsp;jeito&nbsp;certo&nbsp;</strong><span style=\"color: rgb(9, 9, 11);\">(mesmo&nbsp;começando&nbsp;do&nbsp;zero)</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅&nbsp;Aparecer&nbsp;todos&nbsp;os&nbsp;dias&nbsp;para&nbsp;pessoas&nbsp;da&nbsp;sua&nbsp;cidade</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅Saber&nbsp;exatamente&nbsp;o&nbsp;que&nbsp;fazer&nbsp;quando&nbsp;o&nbsp;anúncio&nbsp;não&nbsp;vende</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅</span><strong style=\"color: rgb(9, 9, 11);\">Atrair&nbsp;clientes</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;prontos&nbsp;para&nbsp;comprar.</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅Usar&nbsp;uma&nbsp;estrutura&nbsp;validada,&nbsp;que&nbsp;investe&nbsp;pouco&nbsp;e&nbsp;te&nbsp;faz&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">vender&nbsp;todos&nbsp;os&nbsp;dias.</strong></p>",
+            "id": "oqyGPV",
+            "name": "3BbwzH"
+          }
+        },
+        {
+          "id": "Ihw6Js",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100,
+            "pulse": true
+          },
+          "content": {
+            "name": "NRW8ko",
+            "type": "next",
+            "label": "Vou dominar isso agora",
+            "destination": "next",
+            "pulse": false,
+            "target": false,
+            "id": "dMtodQ"
+          }
+        }
+      ],
+      "position": {
+        "x": 576,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "KMhFH5",
+      "title": "STARFLIX",
+      "layers": [
+        {
+          "id": "nP6Lu4",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h3 class=\"ql-align-center\"><strong class=\"ql-size-large\" style=\"color: rgb(9, 9, 11);\">Na&nbsp;</strong><strong class=\"ql-size-large\" style=\"color: rgb(220, 38, 38);\">STARFLIX</strong><strong class=\"ql-size-large\" style=\"color: rgb(9, 9, 11);\">&nbsp;eu&nbsp;vou&nbsp;te&nbsp;mostrar:</strong></h3>",
+            "id": "ITFEM0",
+            "name": "iozsDx"
+          },
+          "step": "KMhFH5"
+        },
+        {
+          "id": "Y7rWSi",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": {
+            "basis": 100,
+            "horizontalAlign": "mx-auto"
+          },
+          "content": {
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2026-01-06/ogaDo-starflix-inlead-1.png",
+              "type": "image",
+              "width": 1920,
+              "height": 1080
+            },
+            "id": "vCp4iB",
+            "name": "hmaZ30"
+          },
+          "step": "KMhFH5"
+        },
+        {
+          "id": "4LbYFF",
+          "title": "Alerta",
+          "icon": "triangle-alert",
+          "type": "alert",
+          "design": {
+            "style": "success",
+            "padding": "16",
+            "basis": 100,
+            "contrast": false,
+            "backgroundColor": "#ffe2e3",
+            "color": "#b91c1c",
+            "borderColor": "#ffcccc"
+          },
+          "content": {
+            "id": "YoYKZN",
+            "text": "<p><span style=\"color: rgb(9, 9, 11);\">✅&nbsp;Passo&nbsp;a&nbsp;passo&nbsp;para&nbsp;criar&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">anúncios&nbsp;no&nbsp;gerenciador&nbsp;e&nbsp;no&nbsp;turbinar</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;do&nbsp;jeito&nbsp;certo.</span></p><p><span style=\"color: rgb(9, 9, 11);\">✅Como&nbsp;fazer&nbsp;anúncios&nbsp;pelo&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">celular</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;e&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">computador&nbsp;de&nbsp;um&nbsp;jeito&nbsp;simples.</strong></p><p><span style=\"color: rgb(9, 9, 11);\">✅&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">Estruturas&nbsp;validadas</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;para&nbsp;atrair&nbsp;novos&nbsp;clientes&nbsp;todos&nbsp;os&nbsp;dias.</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅</span><strong style=\"color: rgb(9, 9, 11);\">&nbsp;Aulas&nbsp;práticas&nbsp;e&nbsp;objetivas.</strong></p><p><span style=\"color: rgb(9, 9, 11);\">✅Como&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">lotar&nbsp;seu&nbsp;Whatsapp</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;de&nbsp;clientes.</span></p><p><span style=\"color: rgb(9, 9, 11);\">✅Como&nbsp;ganhar&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">seguidores&nbsp;qualificados.</strong></p><p><span style=\"color: rgb(9, 9, 11);\">✅Como&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">vender</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;pelo&nbsp;seu&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">site.</strong></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;</span></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;✅&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">Ferramentas&nbsp;</strong><span style=\"color: rgb(9, 9, 11);\">para&nbsp;aumentar&nbsp;o&nbsp;faturamento&nbsp;e&nbsp;organizar&nbsp;seu&nbsp;negócio.</span></p><p></p><p><span style=\"color: rgb(9, 9, 11);\">Tudo&nbsp;pensado&nbsp;para&nbsp;você&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">Impulsionar&nbsp;as&nbsp;vendas</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;do&nbsp;seu&nbsp;negócio&nbsp;usando&nbsp;a&nbsp;Internet.</span></p>",
+            "icon": {
+              "type": "none",
+              "value": "triangle-alert"
+            },
+            "name": "FqbZSg"
+          },
+          "data-type": "alert",
+          "step": "KMhFH5"
+        },
+        {
+          "id": "bw0Ucy",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100,
+            "pulse": true
+          },
+          "content": {
+            "name": "4DT1D9",
+            "type": "next",
+            "label": "É DISSO QUE EU PRECISO",
+            "destination": "next",
+            "pulse": false,
+            "target": false,
+            "id": "8WXbhf"
+          },
+          "step": "KMhFH5"
+        }
+      ],
+      "position": {
+        "x": 864,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "JZeKlr",
+      "title": "depoimento",
+      "layers": [
+        {
+          "id": "rylQzm",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h1 class=\"ql-align-center\"><strong style=\"color: rgb(220, 38, 38);\">Clique no aúdio e escute o que meu aluno disse 😮</strong></h1>",
+            "id": "VUgVag",
+            "name": "U6iZil"
+          }
+        },
+        {
+          "id": "CzJtYW",
+          "title": "Áudio",
+          "icon": "volume",
+          "type": "audio",
+          "design": {
+            "theme": "light",
+            "model": "whatsapp"
+          },
+          "content": {
+            "audio": {
+              "src": "https://media.inlead.cloud/uploads/22779/2026-02-03/Z7iAM-whatsapp-video-2026-02-03-at-160408.mp3",
+              "type": "audio"
+            },
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2025-12-12/Xa4xE-490223871-687534127012772-3182568221928524864-n.jpg",
+              "type": "external",
+              "width": 150,
+              "height": 150
+            },
+            "id": "U770o6",
+            "name": "9mleQJ",
+            "sender": "Rair - Casa dos Capacetes"
+          }
+        },
+        {
+          "id": "Ff9w4a",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h3 class=\"ql-align-center\"><span style=\"color: rgb(220, 38, 38);\">De R$ 10 mil para mais de R$ 100 mil por mês, o método </span><strong style=\"color: rgb(220, 38, 38); background-color: rgb(9, 9, 11);\">STARFLIX </strong><span style=\"color: rgb(220, 38, 38);\">funciona e o próximo pode ser VOCÊ.</span></h3>",
+            "id": "acuyln",
+            "name": "kJYdTp"
+          }
+        },
+        {
+          "id": "WJWKAb",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": [],
+          "content": {
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2025-10-30/jfdpl-whatsapp-image-2025-10-30-at-104709-pm.jpg",
+              "type": "image",
+              "width": 1320,
+              "height": 898
+            },
+            "id": "XuUbXu",
+            "name": "iwWOur"
+          }
+        },
+        {
+          "id": "ZXJEeC",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100,
+            "pulse": true,
+            "bubble": true
+          },
+          "content": {
+            "name": "K3brNt",
+            "type": "next",
+            "label": "Eu quero isso também",
+            "destination": "next",
+            "pulse": false,
+            "target": false,
+            "id": "uLJkdK"
+          }
+        }
+      ],
+      "position": {
+        "x": 1152,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "66Up1t",
+      "title": "nicho",
+      "layers": [
+        {
+          "id": "CaYMK6",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": {
+            "basis": "100",
+            "horizontalAlign": "mr-auto",
+            "verticalAlign": "self-center"
+          },
+          "content": {
+            "text": "<h3 class=\"ql-align-center\"><strong class=\"ql-size-large\" style=\"color: rgb(220, 38, 38); background-color: rgb(255, 255, 255);\">SERÁ&nbsp;QUE&nbsp;FUNCIONA&nbsp;PRO&nbsp;SEU&nbsp;NICHO?</strong></h3><h1 class=\"ql-align-center\"></h1><p class=\"ql-align-center\"></p><h3 class=\"ql-align-center\">Se&nbsp;ainda&nbsp;tem&nbsp;dúvidas&nbsp;se&nbsp;funciona&nbsp;mesmo,&nbsp;olha&nbsp;o&nbsp;tanto&nbsp;de&nbsp;segmentos&nbsp;que&nbsp;eu&nbsp;já&nbsp;ajudei&nbsp;e&nbsp;hoje&nbsp;vendem&nbsp;muito&nbsp;<span style=\"color: rgb(9, 9, 11); background-color: rgb(255, 255, 255);\">👇</span></h3><h3 class=\"ql-align-center\"><strong style=\"color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\">&nbsp;</strong></h3>",
+            "id": "WxOtyM",
+            "name": "jHtThV"
+          }
+        },
+        {
+          "id": "VuBWwO",
+          "title": "Carrossel",
+          "icon": "tvAlt",
+          "type": "carousel",
+          "design": {
+            "style": null,
+            "basis": 100,
+            "objectFit": "object-contain",
+            "aspectImage": "aspect-[3/4]"
+          },
+          "content": {
+            "centered": true,
+            "spoiler": true,
+            "pagination": true,
+            "layout": "image_text",
+            "items": [
+              {
+                "id": "rYlZWW",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-12/B6GFZ-4.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "NSQXsT",
+                "text": null,
+                "image": {
+                  "type": "image",
+                  "src": "https://media.inlead.cloud/uploads/22779/2025-08-19/AvhIb-whatsapp-image-2025-08-19-at-214059.jpg",
+                  "width": 1280,
+                  "height": 932
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "DQGN1B",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-21/3jNrY-depoimentos-4.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "v3LPcG",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-12/9UQPv-6.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "oCgXZ2",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-02-28/RJnx0-6.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "vjNxD0",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-02-28/mQVvY-3.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "JwaFzz",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-12/wuaB6-3.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "YZ15FX",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-12/V0iSk-2.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "psR0O8",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2025-10-30/rGuKT-1.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              },
+              {
+                "id": "PQiC8q",
+                "text": null,
+                "image": {
+                  "src": "https://media.inlead.cloud/uploads/22779/2026-01-15/MIHKv-depoimentos-1.png",
+                  "type": "image",
+                  "width": 1080,
+                  "height": 1350
+                },
+                "chosen": false,
+                "selected": false
+              }
+            ],
+            "id": "njWgC8",
+            "name": "wXuEYu"
+          }
+        },
+        {
+          "id": "ZR0NEs",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h3 class=\"ql-align-center\">São&nbsp;tantos&nbsp;que&nbsp;eu&nbsp;não&nbsp;consigo&nbsp;colocar&nbsp;todos&nbsp;aqui...&nbsp;Quer&nbsp;ser&nbsp;o&nbsp;próximo&nbsp;a&nbsp;vender&nbsp;muito&nbsp;também?</h3>",
+            "id": "SoZz9f",
+            "name": "SVwKJx"
+          }
+        },
+        {
+          "id": "GTkc9b",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100
+          },
+          "content": {
+            "name": "sSg3Ud",
+            "type": "next",
+            "label": "QUERO VENDER MUITO  🤩",
+            "destination": "next",
+            "pulse": false,
+            "target": false,
+            "id": "datRSN"
+          }
+        }
+      ],
+      "position": {
+        "x": 1440,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    },
+    {
+      "id": "Yd2yeM",
+      "title": "CHECKOUT",
+      "layers": [
+        {
+          "id": "C4jrFh",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h2 class=\"ql-align-center\"><strong style=\"background-color: rgb(255, 255, 255); color: rgb(220, 38, 38);\">ASSISTE&nbsp;ESSE&nbsp;VIDEO&nbsp;AQUI&nbsp;PRA&nbsp;VOCÊ&nbsp;ENTENDER:</strong></h2>",
+            "id": "IBKfF1",
+            "name": "1hMOhi"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "oRo2DR",
+          "title": "Vídeo",
+          "icon": "film",
+          "type": "video",
+          "design": [],
+          "content": {
+            "id": "GogCNE",
+            "title": null,
+            "description": null,
+            "name": "dLeoqz",
+            "video": "<iframe id=\"panda-021b0769-9ad3-4757-8ee9-2c683c39136e\" src=\"https://player-vz-510b4fe2-8aa.tv.pandavideo.com.br/embed/?v=021b0769-9ad3-4757-8ee9-2c683c39136e\" style=\"border:none;\" allow=\"accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture\" allowfullscreen=true width=\"720\" height=\"360\" fetchpriority=\"high\"></iframe>"
+          },
+          "data-type": "video",
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "jCua1v",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h2 class=\"ql-align-center\"><strong style=\"color: rgb(9, 9, 11);\">Você&nbsp;está&nbsp;pronto!</strong></h2><p class=\"ql-align-center\"></p><h3 class=\"ql-align-center\"><span style=\"color: rgb(9, 9, 11);\">Em&nbsp;</span><strong style=\"color: rgb(220, 38, 38);\">menos&nbsp;de&nbsp;24hrs</strong><span style=\"color: rgb(9, 9, 11);\">,&nbsp;você&nbsp;já&nbsp;pode&nbsp;</span><strong style=\"color: rgb(220, 38, 38);\">estar&nbsp;fazendo&nbsp;anúncios</strong><strong style=\"color: rgb(9, 9, 11);\">&nbsp;</strong><span style=\"color: rgb(9, 9, 11);\">do&nbsp;jeito&nbsp;certo,&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">atraindo&nbsp;novos&nbsp;clientes</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;e&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">vendendo&nbsp;muito&nbsp;mais&nbsp;do&nbsp;que&nbsp;já&nbsp;vende&nbsp;hoje</strong><span style=\"color: rgb(9, 9, 11);\">.</span></h3><p class=\"ql-align-center\"></p><h3 class=\"ql-align-center\"><strong style=\"background-color: rgb(9, 9, 11); color: rgb(250, 204, 21);\">Tudo&nbsp;isso&nbsp;com&nbsp;estratégias&nbsp;testadas&nbsp;e&nbsp;validadas&nbsp;por&nbsp;centenas&nbsp;de&nbsp;alunos&nbsp;que&nbsp;estão&nbsp;vendendo&nbsp;todos&nbsp;os&nbsp;dias!</strong></h3>",
+            "id": "KvCXMF",
+            "name": "K4MC9i"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "kT0Isd",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100,
+            "pulse": true
+          },
+          "content": {
+            "name": "yhjXW9",
+            "type": "redirect",
+            "label": "Quero garantir essa Oportunidade",
+            "destination": "https://pay.kiwify.com.br/Ea8P4PB",
+            "pulse": false,
+            "target": false,
+            "id": "0bAqOx"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "cWIJy1",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h2 class=\"ql-align-center\"><strong style=\"background-color: rgb(255, 255, 255); color: rgb(9, 9, 11);\">🎯Seu&nbsp;Objetivo:</strong></h2><p class=\"ql-align-center\"><strong style=\"background-color: rgb(255, 255, 255); color: rgb(9, 9, 11);\">Hoje&nbsp;você&nbsp;vai&nbsp;começar&nbsp;a&nbsp;fazer&nbsp;anúncios&nbsp;que&nbsp;realmente&nbsp;trazem&nbsp;clientes,&nbsp;</strong><strong style=\"background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);\">&nbsp;</strong><strong style=\"background-color: rgb(255, 255, 255); color: rgb(220, 38, 38);\">usando&nbsp;as&nbsp;estratégias&nbsp;que&nbsp;eu&nbsp;aplico&nbsp;pra&nbsp;vender&nbsp;todo&nbsp;dia!</strong></p>",
+            "id": "2iDlfu",
+            "name": "kVVJ1S"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "HDavRb",
+          "title": "Alerta",
+          "icon": "exclamationTriangle",
+          "type": "alert",
+          "design": {
+            "style": "success",
+            "basis": 100
+          },
+          "content": {
+            "text": "<h2 class=\"ql-align-center\"><strong style=\"color: rgb(3, 7, 18);\">🎁Bônus&nbsp;que&nbsp;você&nbsp;recebe&nbsp;na&nbsp;</strong><strong style=\"color: rgb(220, 38, 38);\">STARFLIX:</strong></h2><p></p><h3></h3><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;</span></p><p><strong style=\"color: rgb(9, 9, 11);\">🎁Suporte</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;e&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">grupo&nbsp;de&nbsp;alunos</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;para&nbsp;tirar&nbsp;dúvidas.</span></p><p><strong style=\"color: rgb(9, 9, 11);\">🎁&nbsp;Ideias&nbsp;infinitas</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;de&nbsp;anúncios&nbsp;pro&nbsp;seu&nbsp;negócio.</span></p><p><strong style=\"color: rgb(9, 9, 11);\">🎁</strong><span style=\"color: rgb(9, 9, 11);\">Todas&nbsp;as&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">aulas&nbsp;adicionadas&nbsp;</strong><span style=\"color: rgb(9, 9, 11);\">durante&nbsp;o&nbsp;ano&nbsp;você</span><strong style=\"color: rgb(9, 9, 11);\">&nbsp;não&nbsp;pagará</strong><span style=\"color: rgb(9, 9, 11);\">&nbsp;nada.</span></p><p></p><p><span style=\"color: rgb(9, 9, 11);\">&nbsp;</span></p><p><span style=\"color: rgb(9, 9, 11);\">Tudo&nbsp;pensado&nbsp;para&nbsp;você&nbsp;</span><strong style=\"color: rgb(9, 9, 11);\">Impulsionar&nbsp;as&nbsp;vendas&nbsp;do&nbsp;seu&nbsp;negócio&nbsp;usando&nbsp;a&nbsp;Internet.</strong></p>",
+            "id": "JI5ui6",
+            "name": "AQvL5E"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "4FCV7h",
+          "title": "Imagem",
+          "icon": "image",
+          "type": "image",
+          "design": {
+            "basis": "100",
+            "horizontalAlign": "mx-auto"
+          },
+          "content": {
+            "image": {
+              "src": "https://media.inlead.cloud/uploads/22779/2025-10-29/766Ee-valor-insta-720-x-880-px.png",
+              "type": "image",
+              "width": 720,
+              "height": 880
+            },
+            "id": "7dDm57",
+            "name": "Zlrljz"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "gqKpJL",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h2 class=\"ql-align-center\"><strong style=\"background-color: rgb(255, 255, 255); color: rgb(9, 9, 11);\">55%&nbsp;de&nbsp;</strong><strong style=\"background-color: rgb(255, 255, 255); color: rgb(22, 163, 74);\">DESCONTO</strong><strong style=\"background-color: rgb(255, 255, 255); color: rgb(9, 9, 11);\">&nbsp;para&nbsp;os&nbsp;próximos&nbsp;50&nbsp;alunos</strong></h2><p class=\"ql-align-center\"><span class=\"ql-size-small\" style=\"background-color: rgb(255, 255, 255); color: rgb(9, 9, 11);\">Isso&nbsp;aqui&nbsp;não&nbsp;é&nbsp;gatilho&nbsp;mental,&nbsp;olhe&nbsp;no&nbsp;link&nbsp;da&nbsp;minha&nbsp;bio&nbsp;e&nbsp;veja&nbsp;que&nbsp;o&nbsp;treinamento&nbsp;tem&nbsp;valor&nbsp;de&nbsp;497,00.</span></p><p class=\"ql-align-center\"><strong style=\"background-color: rgb(255, 255, 255); color: rgb(22, 163, 74);\">Clica&nbsp;no&nbsp;link&nbsp;e&nbsp;aproveita&nbsp;o&nbsp;desconto</strong><span style=\"background-color: rgb(255, 255, 255); color: rgb(255, 255, 255);\">👇</span></p>",
+            "id": "Xp8i4f",
+            "name": "jtED2t"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "1yiaiN",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "success",
+            "basis": 100,
+            "pulse": true
+          },
+          "content": {
+            "name": "IVDD6M",
+            "type": "redirect",
+            "label": "Garantir com desconto",
+            "destination": "https://pay.kiwify.com.br/Ea8P4PB",
+            "pulse": false,
+            "target": false,
+            "id": "g1UmuC"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "wjkrTn",
+          "title": "Texto",
+          "icon": "text",
+          "type": "text",
+          "design": [],
+          "content": {
+            "text": "<h3 class=\"ql-align-center\">AINDA&nbsp;ESTÁ&nbsp;COM&nbsp;DÚVIDAS&nbsp;?</h3>",
+            "id": "kowUCB",
+            "name": "OaZxJW"
+          },
+          "step": "Yd2yeM"
+        },
+        {
+          "id": "liNQry",
+          "title": "Botão",
+          "icon": "rectangleWide",
+          "type": "button",
+          "design": {
+            "style": "warning",
+            "basis": 100
+          },
+          "content": {
+            "name": "KdGl5L",
+            "type": "redirect",
+            "label": "Fale comigo no Whatsapp",
+            "destination": "https://wa.me/5585958548964?text=Oi%20meu%20s%C3%B3cio%20acabei%20de%20sair%20do%20teu%20quiz%20e%20tenho%20uma%20d%C3%BAvida.",
+            "pulse": false,
+            "target": false,
+            "id": "GaaJc7"
+          },
+          "step": "Yd2yeM"
+        }
+      ],
+      "position": {
+        "x": 1728,
+        "y": 0
+      },
+      "chosen": false,
+      "selected": false
+    }
+  ],
+  "design": {
+    "logo": {
+      "type": "image"
+    },
+    "themeColor": "#030712",
+    "contentColor": "#6b7280",
+    "titleColor": "#030712",
+    "backgroundColor": "#ffffff",
+    "featuredFont": "inter",
+    "contentFont": "inter",
+    "titleSize": 0.5,
+    "contentSize": 16,
+    "rounded": "rounded-2xl",
+    "elementSize": "56px"
+  },
+  "navigation": {
+    "oCJQlP": "next",
+    "O4J1RD": "next",
+    "2eMAsw": "next",
+    "K6nAOd": "next",
+    "dMtodQ": "next",
+    "8WXbhf": "next",
+    "uLJkdK": "next",
+    "datRSN": "next"
+  },
+  "scripts": [],
+  "webhook": [],
+  "seo": [],
+  "traffic": false,
+  "schemaVersion": 3,
+  "version": "v2"
+}
