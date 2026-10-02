@@ -73,12 +73,14 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({ utmParams }) => {
         </h1>
       </div>
 
-      {/* Video Container (Vídeo final de vendas - novovideo.mp4) */}
-      <div className="w-full max-w-md bg-black rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-5 relative aspect-video flex items-center justify-center">
+      {/* Video Container (Vídeo final de vendas otimizado para todos os dispositivos) */}
+      <div className="w-full max-w-md bg-black rounded-xl overflow-hidden border-2 border-gray-900 shadow-[4px_4px_0px_#09090b] mb-5 relative aspect-video flex items-center justify-center group">
         <video
           controls
           playsInline
-          preload="metadata"
+          preload="auto"
+          poster="/video-poster.jpg"
+          controlsList="nodownload"
           className="w-full h-full object-cover"
         >
           <source src={novoVideoSrc} type="video/mp4" />
