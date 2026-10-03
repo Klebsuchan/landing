@@ -15,7 +15,13 @@ export const Footer: React.FC = () => {
         </p>
 
         <p className="text-[10px] text-gray-500 leading-tight">
-          Contato & Suporte: suporte@starnainternet.com.br
+          Contato & Suporte:{' '}
+          <a
+            href="mailto:suporte@agenciatrafegofacil.com.br"
+            className="text-gray-700 hover:text-red-600 underline font-medium transition-colors"
+          >
+            suporte@agenciatrafegofacil.com.br
+          </a>
         </p>
 
         <p className="text-[10px] text-gray-400 leading-tight max-w-xs mt-1">
