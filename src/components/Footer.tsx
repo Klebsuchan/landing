@@ -10,8 +10,8 @@ export const Footer: React.FC = () => {
           <span>Tráfego Fácil 2026</span>
         </div>
 
-        <p className="text-[11px] text-gray-500">
-          AGENCIA STAR NA INTERNET LTDA • CNPJ 47.982.102/0001-83
+        <p className="text-[11px] text-gray-500 font-medium">
+          AGENCIA TRAFEGO FACIL LTDA • CNPJ 47.982.102/0001-85
         </p>
 
         <p className="text-[10px] text-gray-500 leading-tight">
