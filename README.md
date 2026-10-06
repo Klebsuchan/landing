@@ -124,7 +124,7 @@ O projeto já contém o arquivo `vercel.json` pré-configurado para reconhecimen
 
 O fluxo foi configurado para enviar os leads diretamente para a página oficial de pagamento na Eduzz:
 ```text
-https://chk.eduzz.com/E05NNXX49X
+https://sun.eduzz.com/G96RRN7PW1
 ```
 Qualquer parâmetro UTM passado na URL original do quiz é automaticamente anexado ao link final de compra, permitindo medição precisa de ROI nas plataformas de anúncio (Meta Ads, Google Ads, TikTok Ads).
 

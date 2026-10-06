@@ -1,4 +1,4 @@
-export const CHECKOUT_BASE_URL = 'https://chk.eduzz.com/E05NNXX49X';
+export const CHECKOUT_BASE_URL = 'https://sun.eduzz.com/G96RRN7PW1';
 
 // Visual assets e imagens do primeiro link (Tráfego Fácil 2026)
 export const CHECKOUT_VISUALS = {
